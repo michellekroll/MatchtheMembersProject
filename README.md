@@ -14,4 +14,4 @@ The game screen shows the user a photograph of each club member and presents the
 
 <img width="326" alt="StatisticsScreen" src="https://user-images.githubusercontent.com/67244883/93581431-01261c80-f956-11ea-96c1-d4fd0ab7ab48.png">
 
-The statistics screen shows the user their three previous answers, as well as their longest streak of correct answers. Th user can return back to the game from this page and continue where they left off. 
+The statistics screen shows the user their three previous answers, as well as their longest streak of correct answers. The user can return back to the game from this page and continue where they left off. 
