@@ -4,7 +4,7 @@ Title: Match the Members
 
 This app is a multiple choice trivia game for users to learn the names of the members of Mobile Developers of Berkeley. The game features a start screen with a start button, as well as a game screen where the user is presented with four different options and picture of each member. Each question in the game is timed, and the user will automatically move on to the next question if they do not answer in time. The app also features a statistics page, where users can find their longest streak of correct answers, as well as their three previous answers, and a game over screen that gives users the option of playing again. 
 
-<img width="345" alt="StartScreen" src="https://user-images.githubusercontent.com/67244883/93581421-ff5c5900-f955-11ea-84b7-68de0da60e36.png">
+<img width="357" alt="MatchMembersStart" src="https://user-images.githubusercontent.com/67244883/93582435-531b7200-f957-11ea-8bb5-8b1a511c44fd.png">
 
 The start screen features a start button, as well as the MDB logo. 
 
