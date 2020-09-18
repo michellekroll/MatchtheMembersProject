@@ -19,7 +19,8 @@ class StartScreenViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //self.startButton.layer.cornerRadius = 5
+        self.startButton.layer.cornerRadius = 10
+        view.setGradientBackground(colorOne: UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 228.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0))
     }
     
     @IBAction func tapStartButton(_ sender: UIButton) {

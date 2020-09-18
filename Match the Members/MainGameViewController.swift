@@ -172,13 +172,14 @@ class MainGameViewController: UIViewController {
         
         self.timerLabel.layer.cornerRadius = 10
         self.scoreLabel.layer.cornerRadius = 10
-        self.memberPicture.layer.cornerRadius = 5
-        self.name1.layer.cornerRadius = 5
-        self.name2.layer.cornerRadius = 5
-        self.name3.layer.cornerRadius = 5
-        self.name4.layer.cornerRadius = 5
-        self.pauseButton.layer.cornerRadius = 5
-        self.statsButton.layer.cornerRadius = 5
+        self.memberPicture.layer.cornerRadius = 10
+        self.name1.layer.cornerRadius = 10
+        self.name2.layer.cornerRadius = 10
+        self.name3.layer.cornerRadius = 10
+        self.name4.layer.cornerRadius = 10
+        self.pauseButton.layer.cornerRadius = 10
+        self.statsButton.layer.cornerRadius = 10
+        view.setGradientBackground(colorOne: UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 228.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0))
         startGame()
     }
     
@@ -223,49 +224,25 @@ class MainGameViewController: UIViewController {
     @IBAction func pressName1(_ sender: UIButton) {
         
         callColor(button: name1)
-        //colorFlashGreen = pressButton(choice: name1.title(for: .normal) ?? "Missing Name")
-        //if colorFlashGreen {
-           // flashRed(wrongButton: name1)
-        //}
-        //if colorFlashGreen {
-        //    timer.invalidate()
-        // flashGreen(correctButton: name1)
-       // }
         
     }
     
     @IBAction func pressName2(_ sender: UIButton) {
-        //colorFlashGreen = pressButton(choice: name2.title(for: .normal) ?? "Missing Name")
-        //if !colorFlashGreen {
-         //   flashRed(wrongButton: name2)
-        //}
-        //if colorFlashGreen {
-        //    timer.invalidate()
-       // flashGreen(correctButton: name2)
+       
         callColor(button: name2)
+        
         }
         
     
     @IBAction func pressName3(_ sender: UIButton) {
-       //colorFlashGreen = pressButton(choice: name3.title(for: .normal) ?? "Missing Name")
-       // if !colorFlashGreen {
-        //    flashRed(wrongButton: name3)
-        //}
-        //if colorFlashGreen {
-          //  timer.invalidate()
-           // flashGreen(correctButton: name3)
+      
         callColor(button: name3)
+        
         }
         
     
     @IBAction func pressName4(_ sender: UIButton) {
-        //colorFlashGreen = pressButton(choice: name4.title(for: .normal) ?? "Missing Name")
-       // if !colorFlashGreen {
-        //    flashRed(wrongButton: name4)
-        //}
-        //if colorFlashGreen {
-        // flashGreen(correctButton: name4)
-       // }
+    
         callColor(button: name4)
         
     }

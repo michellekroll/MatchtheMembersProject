@@ -20,6 +20,8 @@ class GameDoneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.setGradientBackground(colorOne: UIColor(red: 74.0/255.0, green: 144.0/255.0, blue: 228.0/255.0, alpha: 1.0), colorTwo: UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0))
+         self.playAgainButton.layer.cornerRadius = 10
         finalScoreLabel.text = ("Final Score: " + String(finalScore))
     }
     
