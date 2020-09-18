@@ -33,6 +33,7 @@ class MainGameViewController: UIViewController {
     var currentName: String!
     var playing = false
     var previousResults: [String] = ["null", "null" , "null"]
+    var correctButton: UIButton!
    
    
     func shuffler() -> [String] {
@@ -125,9 +126,14 @@ class MainGameViewController: UIViewController {
     
     func question(questionNumber: Int) {
         time = 5
+        name1.backgroundColor = .white
+        name2.backgroundColor = .white
+        name3.backgroundColor = .white
+        name4.backgroundColor = .white
+        member = questionNumber + 1
         if questionNumber >= gameList.count {
-            timer.invalidate()
             playing = false
+            //timer.invalidate()
             performSegue(withIdentifier: "segueGameOver", sender: self)
         } else {
             startTimer()
@@ -139,7 +145,7 @@ class MainGameViewController: UIViewController {
         
     }
     
-    func pressButton(choice: String) {
+    func pressButton(choice: String) -> Bool{
         timer.invalidate()
         timerLabel.text = String(5)
         if streak > longestStreak {
@@ -150,13 +156,14 @@ class MainGameViewController: UIViewController {
             streak += 1
             updatePreviousResults(chosenName: choice)
             updateScore(_score: score)
+            return true
         }
         else {
             streak = 0
             updatePreviousResults(chosenName:choice)
+            return false
         }
     }
-    
     
     
     override func viewDidLoad() {
@@ -188,32 +195,78 @@ class MainGameViewController: UIViewController {
         }
     }
     
+    func flashGreen(correctButton: UIButton!) {
+        
+        UIView.animate(withDuration: 1.0, delay: 0.0, options : .curveEaseInOut, animations: {correctButton.backgroundColor = UIColor.green}, completion: { _ in self.question(questionNumber: self.member)})
+    }
     
+    func flashRed(wrongButton: UIButton!) {
+        
+        UIView.animate(withDuration: 1.0, delay: 0.0, options : .curveEaseInOut, animations: {wrongButton.backgroundColor = UIColor.red}, completion: { _ in self.question(questionNumber: self.member)})
+        }
+    
+    var colorFlashGreen = false
+    
+    func callColor(button: UIButton) {
+        
+        colorFlashGreen = pressButton(choice: button.title(for: .normal) ?? "Missing Name")
+        timer.invalidate()
+        if colorFlashGreen {
+            flashGreen(correctButton: button)
+        }
+        else {
+            flashRed(wrongButton: button)
+        }
+        
+        
+    }
     @IBAction func pressName1(_ sender: UIButton) {
-        pressButton(choice: name1.currentTitle ?? "Missing Name")
-        member += 1
-        question(questionNumber: member)
+        
+        callColor(button: name1)
+        //colorFlashGreen = pressButton(choice: name1.title(for: .normal) ?? "Missing Name")
+        //if colorFlashGreen {
+           // flashRed(wrongButton: name1)
+        //}
+        //if colorFlashGreen {
+        //    timer.invalidate()
+        // flashGreen(correctButton: name1)
+       // }
         
     }
     
     @IBAction func pressName2(_ sender: UIButton) {
-        pressButton(choice: name2.currentTitle ?? "Missing Name")
-        member += 1
-        question(questionNumber: member)
+        //colorFlashGreen = pressButton(choice: name2.title(for: .normal) ?? "Missing Name")
+        //if !colorFlashGreen {
+         //   flashRed(wrongButton: name2)
+        //}
+        //if colorFlashGreen {
+        //    timer.invalidate()
+       // flashGreen(correctButton: name2)
+        callColor(button: name2)
+        }
         
-    }
     
     @IBAction func pressName3(_ sender: UIButton) {
-        pressButton(choice: name3.currentTitle ?? "Missing Name")
-        member += 1
-        question(questionNumber: member)
+       //colorFlashGreen = pressButton(choice: name3.title(for: .normal) ?? "Missing Name")
+       // if !colorFlashGreen {
+        //    flashRed(wrongButton: name3)
+        //}
+        //if colorFlashGreen {
+          //  timer.invalidate()
+           // flashGreen(correctButton: name3)
+        callColor(button: name3)
+        }
         
-    }
     
     @IBAction func pressName4(_ sender: UIButton) {
-        pressButton(choice: name4.currentTitle ?? "Missing Name")
-        member += 1
-        question(questionNumber: member)
+        //colorFlashGreen = pressButton(choice: name4.title(for: .normal) ?? "Missing Name")
+       // if !colorFlashGreen {
+        //    flashRed(wrongButton: name4)
+        //}
+        //if colorFlashGreen {
+        // flashGreen(correctButton: name4)
+       // }
+        callColor(button: name4)
         
     }
     

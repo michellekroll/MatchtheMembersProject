@@ -20,7 +20,7 @@ class GameDoneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        finalScoreLabel.text = String(finalScore)
+        finalScoreLabel.text = ("Final Score: " + String(finalScore))
     }
     
     @IBAction func goToStart(_ sender: UIButton) {
