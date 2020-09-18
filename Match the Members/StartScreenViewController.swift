@@ -13,6 +13,7 @@ class StartScreenViewController: UIViewController {
     
     @IBOutlet weak var membersLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var mdbLogo: UIImageView!
     
     
     override func viewDidLoad() {
